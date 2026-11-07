@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ogden Marathon 2027 · Training Tracker</title>
+<style>
+:root{--orange:#fc5200;--orange-dark:#e94b00;--ink:#242329;--muted:#777780;--paper:#f4f4f2;--line:#e7e6e3;--white:#fff;--peach:#fff0e8;--shadow:0 12px 30px #2823220d}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,sans-serif}header{position:relative;overflow:hidden;background:radial-gradient(ellipse at 85% 10%,#fc520042 0,transparent 34%),linear-gradient(120deg,#201f23,#353238);color:#fff;padding:40px max(24px,calc((100vw - 1120px)/2)) 36px;border-bottom:5px solid var(--orange)}header:after{content:"";position:absolute;width:320px;height:320px;right:-80px;bottom:-230px;border:2px solid #fc52005c;border-radius:50%;box-shadow:0 0 0 24px #fc520018,0 0 0 50px #fc520010;pointer-events:none}.eyebrow{font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:#ff9d70;font-weight:800}.hero-tag{display:inline-flex;align-items:center;gap:8px;background:#ffffff12;border:1px solid #ffffff20;border-radius:99px;padding:6px 11px;margin:3px 0 10px;font-size:.77rem;font-weight:750;color:#f5d5c7}.hero-dot{height:8px;width:8px;background:var(--orange);border-radius:50%;box-shadow:0 0 0 4px #fc520033}h1{font-size:clamp(2.1rem,5vw,3.35rem);line-height:1.04;letter-spacing:-.04em;margin:.45rem 0 .8rem}.sub{color:#d7d4d2;max-width:760px;margin:0}.wrap{max-width:1160px;margin:25px auto;padding:0 20px}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.card,.week,.chart-card{background:var(--white);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow)}.card{padding:16px 18px;position:relative;overflow:hidden;transition:transform .18s,box-shadow .18s}.card:hover,.chart-card:hover{transform:translateY(-2px);box-shadow:0 16px 34px #28232212}.card:first-child{border-top:3px solid var(--orange)}.label{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:800}.value{font-size:1.5rem;font-weight:820;letter-spacing:-.035em;margin-top:2px}.small{font-size:.84rem;color:var(--muted)}.progress-card{grid-column:span 2}.track{height:10px;background:#f0eeec;border-radius:20px;margin:11px 0 6px;overflow:hidden}.fill{height:100%;width:0;background:linear-gradient(90deg,#ff9a6b,var(--orange));border-radius:20px;transition:width .3s}.charts{display:grid;grid-template-columns:1.15fr 1fr;gap:16px;margin:18px 0}.chart-card{padding:18px 18px 13px;min-width:0;transition:transform .18s,box-shadow .18s}.chart-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}.chart-title{font-size:1.05rem;font-weight:800;letter-spacing:-.02em}.chart-sub{font-size:.82rem;color:var(--muted);margin-top:2px}.live-pill{white-space:nowrap;background:var(--peach);color:var(--orange-dark);font-weight:800;font-size:.69rem;letter-spacing:.04em;text-transform:uppercase;padding:5px 8px;border-radius:99px}.legend{display:flex;gap:16px;align-items:center;flex-wrap:wrap;margin:12px 0 2px;font-size:.78rem;color:var(--muted)}.legend-item{display:inline-flex;align-items:center;gap:7px}.legend-line{width:18px;height:3px;border-radius:5px;background:var(--orange)}.legend-line.plan{background:#45434a}.chart{width:100%;min-height:220px}.chart svg{display:block;width:100%;height:auto;overflow:visible}.gridline{stroke:#ecebe8;stroke-width:1}.axis-label{fill:#89888e;font-size:10px;font-family:inherit}.plan-line{fill:none;stroke:#48464d;stroke-width:2.5;stroke-dasharray:5 5;stroke-linecap:round;stroke-linejoin:round}.actual-line{fill:none;stroke:var(--orange);stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round}.actual-dot{fill:var(--orange);stroke:white;stroke-width:2}.chart-note{font-size:.78rem;color:var(--muted);margin:3px 0 0}.notice{background:#fff7f2;border:1px solid #ffd7c3;border-left:4px solid var(--orange);border-radius:13px;padding:14px 16px;margin:16px 0 22px;color:#55433b}.notice strong{color:#aa3900}.toolbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:23px 0 13px}.toolbar h2{margin:0 auto 0 0;font-size:1.35rem;letter-spacing:-.03em}button,select{font:inherit}button{border:1px solid var(--line);background:white;color:var(--ink);padding:8px 12px;border-radius:10px;cursor:pointer;font-weight:700;transition:background .15s,border-color .15s,transform .15s}button:hover{background:var(--peach);border-color:#ffc7aa;transform:translateY(-1px)}select{border:1px solid var(--line);border-radius:10px;padding:8px 10px;background:white;color:var(--ink)}.week{margin:11px 0;overflow:hidden;transition:box-shadow .18s}.week:hover{box-shadow:0 13px 30px #28232212}.week summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:70px 1fr auto auto;align-items:center;gap:16px;padding:16px 18px}.week summary::-webkit-details-marker{display:none}.week summary:hover{background:#fffaf7}.wkno{font-weight:850;color:var(--orange);font-size:.8rem;letter-spacing:.06em}.weektitle{font-weight:800}.weekmeta{font-size:.84rem;color:var(--muted)}.weektotal{font-weight:800;white-space:nowrap}.badge{font-size:.69rem;background:var(--peach);color:var(--orange-dark);padding:5px 9px;border-radius:99px;font-weight:850;letter-spacing:.035em;white-space:nowrap}.week[open] summary{border-bottom:1px solid var(--line)}.content{padding:16px 18px 18px}.weeknote{color:var(--muted);margin:0 0 12px}.days{width:100%;border-collapse:collapse}.days th{text-align:left;font-size:.72rem;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);padding:8px;border-bottom:1px solid var(--line)}.days td{padding:9px 8px;border-bottom:1px solid #f0efed;vertical-align:middle}.days tr:last-child td{border-bottom:0}.dayname{font-weight:750;width:95px}.distance{font-variant-numeric:tabular-nums;font-weight:800;width:86px}.type{color:var(--muted)}.checkcell{width:85px;text-align:center}.done{width:18px;height:18px;accent-color:var(--orange);cursor:pointer}.actual{width:86px;border:1px solid var(--line);border-radius:8px;padding:6px 7px;font:inherit}.actual:focus,.notes:focus{outline:2px solid #fc520055;border-color:var(--orange)}.notes{width:100%;border:1px solid var(--line);border-radius:10px;padding:9px;font:inherit;margin-top:12px;resize:vertical}.done-row{color:#888}.done-row .dayname:after{content:" ✓";color:var(--orange)}.foot{color:var(--muted);font-size:.85rem;margin:24px 0 40px}.race{background:#fffaf7;border-color:#ffd9c7}.race .badge{background:var(--orange);color:white}.race summary{background:#fffaf7}.rest-row{background:#faf9f8;color:#aaa}.rest-row .type{color:#999}.foot strong{color:var(--orange-dark)}
+@media(max-width:800px){.charts{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:680px){header{padding-top:30px}.stats{grid-template-columns:repeat(2,1fr);gap:10px}.progress-card{grid-column:span 2}.card{padding:14px}.charts{gap:12px}.chart-card{padding:15px 12px 12px}.chart{min-height:180px}.week summary{grid-template-columns:54px 1fr auto;gap:9px;padding:13px}.week summary .badge{grid-column:2;justify-self:start}.weektotal{grid-column:3;grid-row:1}.days th:nth-child(4),.days td:nth-child(4){display:none}.dayname{width:68px}.distance{width:66px}.actual{width:68px}.checkcell{width:42px}.content{padding:12px}.toolbar h2{width:100%}}
+</style>
+</head>
+<body>
+<header><div class="eyebrow">Training plan · November 9, 2026 – May 15, 2027</div><div class="hero-tag"><span class="hero-dot"></span>YOUR ROAD TO OGDEN · 2027</div><h1>Ogden Marathon<br>Training Tracker</h1><p class="sub">A 27-week build toward race day. Six runs most weeks, with Saturday long runs and Sundays off. Race week has runs Monday, Wednesday, Friday, and race day Saturday. Check off sessions, record actual miles, and track your progress as you go.</p></header>
+<main class="wrap">
+<section class="stats" aria-label="Training progress">
+<div class="card"><div class="label">Race day</div><div class="value">May 15, 2027</div><div class="small">Ogden, Utah · Saturday</div></div>
+<div class="card"><div class="label">Plan length</div><div class="value">27 weeks</div><div class="small">Starts Monday, Nov 9, 2026</div></div>
+<div class="card"><div class="label">Sessions complete</div><div class="value" id="doneCount">0 / 160</div><div class="small" id="doneSub">0% complete</div></div>
+<div class="card"><div class="label">Miles logged</div><div class="value" id="milesLogged">0.0</div><div class="small">Across all recorded runs</div></div>
+<div class="card progress-card"><div class="label">Overall training progress</div><div class="track"><div class="fill" id="progressFill"></div></div><div class="small" id="progressText">0 of 160 runs checked off</div></div>
+<div class="card"><div class="label">This week</div><div class="value" id="currentWeek">Week 1</div><div class="small" id="currentDates">Nov 9–15, 2026</div></div>
+</section>
+<section class="charts" aria-label="Training graphs">
+ <article class="chart-card">
+  <div class="chart-head"><div><div class="chart-title">Weekly mileage</div><div class="chart-sub">Your build, week by week</div></div><span class="live-pill">Live graph</span></div>
+  <div class="legend"><span class="legend-item"><span class="legend-line plan"></span>Planned</span><span class="legend-item"><span class="legend-line"></span>Logged</span></div>
+  <div class="chart" id="weeklyChart"></div>
+  <p class="chart-note">Enter actual miles in a week to add your orange line.</p>
+ </article>
+ <article class="chart-card">
+  <div class="chart-head"><div><div class="chart-title">Saturday long runs</div><div class="chart-sub">Building toward your 22-mile peaks</div></div><span class="live-pill">Live graph</span></div>
+  <div class="legend"><span class="legend-item"><span class="legend-line plan"></span>Planned</span><span class="legend-item"><span class="legend-line"></span>Logged</span></div>
+  <div class="chart" id="longChart"></div>
+  <p class="chart-note">Log Saturday’s actual miles to compare them with the plan.</p>
+ </article>
+</section>
+
+<div class="toolbar"><h2>Weekly plan</h2><label class="small" for="filter">Show</label><select id="filter"><option value="all">All weeks</option><option value="upcoming">Upcoming</option><option value="incomplete">Incomplete</option><option value="complete">Complete</option></select><button id="expand">Expand all</button><button id="reset">Clear tracker</button></div>
+<div id="weeks"></div>
+<p class="foot">Use the mileage as a guide, not a requirement. Keep easy and recovery days truly comfortable; take extra rest or reduce mileage if pain changes your stride or persists. This tracker saves entries in this browser on this device. Export or back up your browser data if you want to keep a separate copy.</p>
+</main>
+<script>
+// Weekly targets in miles; includes a cutback after the first 22-miler and a 3-week taper.
+const targets=[20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,48,50,52,54,56,58,45,30,34.2];
+const longRuns=[5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,18,19,20,21,21,22,16,10,26.2];
+const phases=[
+'Start with a 5-mile easy long run. Add relaxed strides on Tuesday if you feel fresh.',
+'Keep most miles conversational; the long run grows to 6 miles.',
+'Introduce a short, controlled tempo segment Tuesday; Thursday remains easy.',
+'Keep building gradually; all quality should feel controlled.',
+'Add short hill repeats Tuesday. Practice drinking during the long run.',
+'Tempo intervals Tuesday; keep Thursday and Saturday at comfortable effort.',
+'Keep weekday workouts controlled as the long run reaches 11 miles.',
+'Build aerobic strength; keep the long run conversational.',
+'Add a steady segment on Thursday; begin practicing long-run fueling.',
+'Tuesday: controlled intervals. Thursday: easy aerobic miles.',
+'Continue tempo work; do not race the workouts.',
+'Keep building volume and long-run fueling habits.',
+'Add marathon-effort blocks Thursday if recovered; otherwise run easy.',
+'Practice race-day fueling during the long run; keep it easy.',
+'Tuesday: controlled tempo. Saturday: easy long run.',
+'Keep building, with a focus on relaxed, consistent running.',
+'Long run reaches 21 miles. Keep the effort conversational.',
+'First 22-mile long run. Easy effort; rehearse fueling and hydration.',
+'Planned cutback after the first 22-miler. Keep all running easy.',
+'Rebuild steadily; long run 19 miles, easy throughout.',
+'Long run 20 miles. Keep the weekday workouts controlled.',
+'Long run 21 miles; practice your race-day routine.',
+'Hold the long run at 21 miles; build weekly volume gently.',
+'Second and final 22-mile long run. Keep it easy and finish feeling controlled.',
+'Taper begins. Reduce volume while retaining relaxed strides.',
+'Taper week. Keep runs short and easy; prioritize recovery.',
+'Race week: run 3 miles Monday and Wednesday, 2 miles Friday, then race Saturday. Tuesday and Thursday are rest days.'
+];
+const weekdays=['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+const weekStart=new Date('2026-11-09T12:00:00');
+const storeKey='ogdenMarathonTracker2027_v1';
+let state={};try{state=JSON.parse(localStorage.getItem(storeKey)||'{}')}catch{}
+function dateAt(offset){const d=new Date(weekStart);d.setDate(d.getDate()+offset);return d}
+function fmtDate(d,withYear=false){return d.toLocaleDateString('en-US',{month:'short',day:'numeric',...(withYear?{year:'numeric'}:{})})}
+function round1(v){return Math.round(v*10)/10}
+function half(v){return Math.round(v*2)/2}
+function getRuns(i){
+ const total=targets[i],long=longRuns[i];
+ if(i===26){return [3,0,3,0,2,26.2]}
+ const weekdaysTotal=total-long;
+ let runs=[3,3,3,3,3],extra=weekdaysTotal-15;
+ // Put early added miles on Tuesday, then Thursday and Friday so recovery days stay shorter.
+ for(const day of [1,3,4]){
+  const add=Math.min(3,extra);
+  runs[day]+=add;
+  extra-=add;
+ }
+ if(extra>0){
+  const weights=[.15,.30,.15,.30,.10];
+  const additions=weights.map(w=>half(extra*w));
+  additions[4]=half(extra-additions.slice(0,4).reduce((a,b)=>a+b,0));
+  runs=runs.map((v,d)=>v+additions[d]);
+ }
+ return runs.concat(long);
+}
+function workoutType(day,i){
+ if(i===26)return ['Easy 3-mile run','Rest day','Easy 3-mile run','Rest day','Easy 2-mile shakeout','Ogden Marathon'][day];
+ if(day===0)return 'Easy recovery run';
+ if(day===1)return i<2?'Easy + relaxed strides':i<7?'Short hill strides':i<23?'Quality session · controlled':'Easy + relaxed strides';
+ if(day===2)return 'Easy aerobic run';
+ if(day===3)return i<8?'Easy aerobic run':i<23?'Steady / marathon effort':'Easy + relaxed strides';
+ if(day===4)return 'Very easy recovery run';
+ return 'Long run · easy conversational effort';
+}
+function dayKey(w,d){return `${w}-${d}`}
+function render(){
+ const root=document.getElementById('weeks');root.innerHTML='';const now=new Date();now.setHours(0,0,0,0);
+ targets.forEach((miles,i)=>{
+  const start=dateAt(i*7),end=dateAt(i*7+6),isRace=i===26,isFuture=start>now;
+  const details=document.createElement('details');details.className='week'+(isRace?' race':'');details.dataset.week=i;
+  const summ=document.createElement('summary');
+  summ.innerHTML=`<span class="wkno">WEEK ${i+1}</span><span><span class="weektitle">${fmtDate(start)} – ${fmtDate(end, true)}</span><br><span class="weekmeta">${phases[i]}</span></span><span class="weektotal">${miles} mi target</span><span class="badge">${isRace?'RACE WEEK':i>=24?'TAPER':'LONG RUN '+longRuns[i]+' mi'}</span>`;
+  const content=document.createElement('div');content.className='content';
+  const runs=getRuns(i);
+  let table='<table class="days"><thead><tr><th>Day</th><th>Plan</th><th>Session</th><th>Done</th><th>Actual mi</th></tr></thead><tbody>';
+  weekdays.forEach((day,d)=>{const k=dayKey(i,d),saved=state[k]||{},rest=runs[d]===0;table+=`<tr class="${saved.done&&!rest?'done-row':''}"><td class="dayname">${day}</td><td class="distance">${rest?'Rest':runs[d]+' mi'}</td><td class="type">${workoutType(d,i)}</td><td class="checkcell">${rest?'—':`<input class="done" type="checkbox" aria-label="Mark ${day} complete" data-key="${k}" ${saved.done?'checked':''}>`}</td><td>${rest?'—':`<input class="actual" type="number" min="0" step="0.1" placeholder="—" aria-label="Actual miles ${day}" data-actual="${k}" value="${saved.actual??''}">`}</td></tr>`});
+  table+='</tbody></table>';
+  content.innerHTML=`<p class="weeknote"><strong>Weekly target:</strong> ${miles} miles · <strong>Saturday target:</strong> ${longRuns[i]} miles${isRace?' (race)':''} · <strong>Sunday:</strong> Rest day</p>${table}<textarea class="notes" rows="2" placeholder="Notes: how you felt, weather, fueling, or adjustments" aria-label="Week ${i+1} notes" data-notes="${i}">${(state['note-'+i]||'').replaceAll('<','&lt;')}</textarea>`;
+  details.append(summ,content);root.append(details);
+ });
+ root.querySelectorAll('.done').forEach(el=>el.addEventListener('change',()=>{const v=state[el.dataset.key]||{};v.done=el.checked;state[el.dataset.key]=v;save();renderStats();el.closest('tr').classList.toggle('done-row',el.checked)}));
+ root.querySelectorAll('.actual').forEach(el=>el.addEventListener('input',()=>{const v=state[el.dataset.actual]||{};v.actual=el.value;state[el.dataset.actual]=v;save();renderStats();renderCharts()}));
+ root.querySelectorAll('.notes').forEach(el=>el.addEventListener('input',()=>{state['note-'+el.dataset.notes]=el.value;save()}));
+ applyFilter();renderStats();renderCharts();
+}
+function save(){localStorage.setItem(storeKey,JSON.stringify(state))}
+function actualForWeek(w,dayOnly=null){
+ let sum=0,has=false;const planned=getRuns(w);
+ for(let d=0;d<6;d++){
+  if(planned[d]===0||(dayOnly!==null&&d!==dayOnly))continue;
+  const x=state[dayKey(w,d)]||{};
+  if(x.actual!==undefined&&x.actual!==''){sum+=Number(x.actual)||0;has=true}
+ }
+ return has?sum:null;
+}
+function chartSvg(containerId,planned,actual,label){
+ const W=700,H=260,L=44,R=12,T=16,B=34,PW=W-L-R,PH=H-T-B;
+ const values=[...planned,...actual.filter(v=>v!==null)].filter(v=>Number.isFinite(v));
+ const max=Math.max(10,Math.ceil(Math.max(...values)/10)*10),x=i=>L+(i/(planned.length-1))*PW,y=v=>T+PH-(v/max)*PH;
+ const path=series=>{let out='',active=false;series.forEach((v,i)=>{if(v===null||!Number.isFinite(v)){active=false;return}out+=(active?' L':' M')+x(i).toFixed(1)+' '+y(v).toFixed(1);active=true});return out.trim()};
+ let svg=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${label}">`;
+ for(let tick=0;tick<=4;tick++){const v=max*tick/4,yy=y(v);svg+=`<line class="gridline" x1="${L}" y1="${yy}" x2="${W-R}" y2="${yy}"/><text class="axis-label" x="${L-9}" y="${yy+3}" text-anchor="end">${Math.round(v)}</text>`}
+ const ticks=[0,4,8,12,16,20,24,26];for(const i of ticks){if(i<planned.length){svg+=`<text class="axis-label" x="${x(i)}" y="${H-8}" text-anchor="middle">${i+1}</text>`}}
+ svg+=`<path class="plan-line" d="${path(planned)}"/><path class="actual-line" d="${path(actual)}"/>`;
+ actual.forEach((v,i)=>{if(v!==null&&Number.isFinite(v))svg+=`<circle class="actual-dot" cx="${x(i)}" cy="${y(v)}" r="4"><title>Week ${i+1}: ${v.toFixed(1)} miles logged</title></circle>`});
+ svg+='</svg>';document.getElementById(containerId).innerHTML=svg;
+}
+function renderCharts(){
+ const weeklyActual=targets.map((_,w)=>actualForWeek(w));
+ const longActual=targets.map((_,w)=>actualForWeek(w,5));
+ chartSvg('weeklyChart',targets,weeklyActual,'Weekly planned and logged miles');
+ chartSvg('longChart',longRuns,longActual,'Planned and logged Saturday long-run miles');
+}
+function renderStats(){let total=0,done=0,logged=0;for(let w=0;w<targets.length;w++){const planned=getRuns(w);for(let d=0;d<6;d++){if(planned[d]===0)continue;total++;const x=state[dayKey(w,d)]||{};if(x.done)done++;if(x.actual!==undefined&&x.actual!=='')logged+=Number(x.actual)||0}}
+ document.getElementById('doneCount').textContent=`${done} / ${total}`;document.getElementById('doneSub').textContent=`${Math.round(done/total*100)}% complete`;document.getElementById('progressFill').style.width=`${done/total*100}%`;document.getElementById('progressText').textContent=`${done} of ${total} runs checked off`;document.getElementById('milesLogged').textContent=logged.toFixed(1);
+ let wi=Math.floor((Date.now()-weekStart.getTime())/(7*86400000));wi=Math.min(26,Math.max(0,wi));const s=dateAt(wi*7);document.getElementById('currentWeek').textContent=`Week ${wi+1}`;document.getElementById('currentDates').textContent=`${fmtDate(s)}–${fmtDate(dateAt(wi*7+6),true)}`
+}
+function applyFilter(){const f=document.getElementById('filter').value,now=new Date();now.setHours(0,0,0,0);document.querySelectorAll('.week').forEach((el,i)=>{let checked=0,plannedCount=0;const planned=getRuns(i);for(let d=0;d<6;d++){if(planned[d]===0)continue;plannedCount++;if(state[dayKey(i,d)]?.done)checked++}const complete=checked===plannedCount;const start=dateAt(i*7);el.style.display=f==='complete'?(complete?'':'none'):f==='incomplete'?(complete?'none':''):f==='upcoming'?(start<now?'none':''):''})}
+document.getElementById('filter').addEventListener('change',applyFilter);document.getElementById('expand').addEventListener('click',e=>{const all=[...document.querySelectorAll('.week')],open=all.some(x=>!x.open);all.forEach(x=>x.open=open);e.currentTarget.textContent=open?'Collapse all':'Expand all'});document.getElementById('reset').addEventListener('click',()=>{if(confirm('Clear all completed runs, actual mile entries, and notes from this tracker?')){state={};save();render()}});render();
+</script>
+</body>
+</html>
